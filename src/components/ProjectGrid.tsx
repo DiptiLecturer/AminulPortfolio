@@ -1,0 +1,124 @@
+import { useState } from "react";
+import { ExternalLink } from "lucide-react";
+import { projects, type Project } from "@/constants/data";
+import { motion, AnimatePresence } from "framer-motion";
+
+const filters = ["All", "Android Mobile", "Next.js Web"] as const;
+
+const ProjectGrid = () => {
+  const [active, setActive] = useState<string>("All");
+
+  const filtered =
+    active === "All"
+      ? projects
+      : projects.filter((p) => p.category === active);
+
+  return (
+    <section id="projects" className="section-padding bg-secondary/30">
+      <div className="mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+            Portfolio
+          </span>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+            Featured Projects
+          </h2>
+        </motion.div>
+
+        {/* Filters */}
+        <div className="mt-8 flex justify-center gap-2">
+          {filters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActive(f)}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                active === f
+                  ? "bg-primary text-primary-foreground shadow-md shadow-primary/25"
+                  : "bg-card text-muted-foreground border border-border hover:border-primary/30"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <motion.div layout className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const ProjectCard = ({ project }: { project: Project }) => (
+  <motion.div
+    layout
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.95 }}
+    transition={{ duration: 0.3 }}
+    className="card-hover group overflow-hidden rounded-2xl border border-border bg-card"
+  >
+    {/* Image placeholder */}
+    <div className="relative h-48 overflow-hidden bg-secondary">
+      <div className="flex h-full items-center justify-center">
+        <span className="text-4xl font-bold text-primary/10">
+          {project.category === "Android Mobile" ? "📱" : "🌐"}
+        </span>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+    </div>
+
+    <div className="p-6">
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+            {project.category}
+          </span>
+          <h3 className="mt-1 text-lg font-bold text-foreground">{project.title}</h3>
+        </div>
+        <ExternalLink size={16} className="mt-1 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+      </div>
+
+      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+        {project.description}
+      </p>
+
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded bg-secondary px-2 py-0.5 text-xs font-medium text-muted-foreground"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.highlights.map((h) => (
+          <span
+            key={h}
+            className="flex items-center gap-1 text-xs text-accent font-medium"
+          >
+            <span className="h-1 w-1 rounded-full bg-accent" />
+            {h}
+          </span>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+);
+
+export default ProjectGrid;
