@@ -37,11 +37,10 @@ const ProjectGrid = () => {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
-                active === f
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${active === f
                   ? "bg-primary text-primary-foreground shadow-md shadow-primary/25"
                   : "bg-card text-muted-foreground border border-border hover:border-primary/30"
-              }`}
+                }`}
             >
               {f}
             </button>
@@ -68,51 +67,63 @@ const ProjectCard = ({ project }: { project: Project }) => (
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, scale: 0.95 }}
     transition={{ duration: 0.3 }}
-    className="card-hover group overflow-hidden rounded-2xl border border-border bg-card"
+    className="card-hover group overflow-hidden rounded-2xl border border-border bg-card flex flex-col h-full"
   >
-    {/* Image placeholder */}
-    <div className="relative h-48 overflow-hidden bg-secondary">
-      <div className="flex h-full items-center justify-center">
-        <span className="text-4xl font-bold text-primary/10">
-          {project.category === "Android Mobile" ? "📱" : "🌐"}
-        </span>
+    {/* Actual Image Render */}
+    <div className="relative h-52 overflow-hidden bg-secondary">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100 flex items-end p-4">
+        <span className="text-white text-xs font-medium">View Project Details</span>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
     </div>
 
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <div className="flex items-start justify-between gap-2">
         <div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
             {project.category}
           </span>
           <h3 className="mt-1 text-lg font-bold text-foreground">{project.title}</h3>
         </div>
-        <ExternalLink size={16} className="mt-1 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+        {/* Link to GitHub */}
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 shrink-0 text-muted-foreground transition-colors hover:text-primary"
+        >
+          <ExternalLink size={18} />
+        </a>
       </div>
 
       <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
         {project.description}
       </p>
 
+      {/* Tech Tags */}
       <div className="mt-4 flex flex-wrap gap-1.5">
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded bg-secondary px-2 py-0.5 text-xs font-medium text-muted-foreground"
+            className="rounded-md bg-primary/10 border border-primary/20 px-2 py-0.5 text-[10px] font-bold uppercase text-primary"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      {/* Highlights */}
+      <div className="mt-auto pt-4 flex flex-wrap gap-x-4 gap-y-1">
         {project.highlights.map((h) => (
           <span
             key={h}
-            className="flex items-center gap-1 text-xs text-accent font-medium"
+            className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium"
           >
-            <span className="h-1 w-1 rounded-full bg-accent" />
+            <span className="h-1 w-1 rounded-full bg-primary" />
             {h}
           </span>
         ))}
@@ -120,5 +131,4 @@ const ProjectCard = ({ project }: { project: Project }) => (
     </div>
   </motion.div>
 );
-
 export default ProjectGrid;

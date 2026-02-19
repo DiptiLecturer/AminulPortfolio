@@ -16,16 +16,15 @@ export const stats = [
 ];
 
 export const courseStack = [
-  "Kotlin", 
+  "Kotlin",
   "SQLite",
   "Jetpack Compose",
   "Retrofit",
   "Ktor",
   "Firebase",
   "Supabase",
-  "SQLite",
+  "SQLite", // Note: This is duplicated in your original list
   "Kotlin Multiplatform",
-
 ];
 
 export const course = {
@@ -46,49 +45,54 @@ export type Project = {
   image: string;
   tags: string[];
   highlights: string[];
+  githubUrl?: string; // Added for better linking
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Location Management App",
+    title: "AI Note App (Jetpack Compose)",
     description:
-      "Real-time GPS tracking and geofencing solution for fleet management. Features live location sharing, route history, and automated alerts.",
+      "A modern note-taking application built with Room Database and Jetpack Compose. Features a clean MVVM architecture and local data persistence.",
     category: "Android Mobile",
-    image: "/images/projects/location-app.jpg",
-    tags: ["Kotlin", "Jetpack Compose", "Google Maps SDK", "Firebase"],
-    highlights: ["Real-time tracking", "Geofencing alerts", "Route history"],
+    image: "AminulPortfolio/public/notes.png",
+    tags: ["Kotlin", "Jetpack Compose", "Room DB", "MVVM"],
+    highlights: ["Local Persistence", "Modern UI", "AI Integration logic"],
+    githubUrl: "https://github.com/AminulMunnaDev/NoteAppAIJpc"
   },
   {
     id: 2,
-    title: "Next.js Inventory Management",
+    title: "Osaka Business & Inventory",
     description:
-      "Full-stack inventory management system with role-based access control, real-time stock updates, and analytics dashboard.",
+      "A professional business website for Osaka, featuring a robust backend inventory management system to track sales.",
     category: "Next.js Web",
-    image: "/images/projects/inventory-app.jpg",
-    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    highlights: ["Role-based access", "Real-time updates", "Analytics dashboard"],
+    image: "/images/projects/osaka-web.jpg",
+    tags: ["Next.js", "React", "Node.js", "Inventory System"],
+    highlights: ["Backend Integration", "Inventory Tracking", "Business SEO"],
+    githubUrl: "https://github.com/DiptiLecturer/osakaWebsite"
   },
   {
     id: 3,
-    title: "E-Commerce Mobile App",
+    title: "NSDA Location Management",
     description:
-      "Feature-rich shopping app with payment gateway integration, push notifications, and offline-first architecture.",
+      "An XML-based Android service for location management, developed as part of the NSDA job assessment. Handles coordinate tracking and UI mapping.",
     category: "Android Mobile",
-    image: "/images/projects/ecommerce-app.jpg",
-    tags: ["Kotlin", "Retrofit", "Room DB", "Stripe"],
-    highlights: ["Payment integration", "Push notifications", "Offline support"],
+    image: "/images/projects/location-xml.jpg",
+    tags: ["Android XML", "Java/Kotlin", "Location Services", "NSDA"],
+    highlights: ["GPS Integration", "Service Management", "Task-based UI"],
+    githubUrl: "https://github.com/DiptiLecturer/NSDA_JOB_3_XML"
   },
   {
     id: 4,
-    title: "Learning Management Portal",
+    title: "Developer Portfolio Website",
     description:
-      "Web-based LMS with course management, progress tracking, video streaming, and certificate generation.",
+      "A high-performance personal portfolio built with Next.js to showcase professional skills, projects, and educational background.",
     category: "Next.js Web",
-    image: "/images/projects/lms-app.jpg",
-    tags: ["Next.js", "Supabase", "Tailwind CSS", "Stripe"],
-    highlights: ["Course management", "Video streaming", "Certificates"],
-  },
+    image: "/images/projects/portfolio.jpg",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    highlights: ["Responsive Design", "Project Showcase", "Contact Form"],
+    githubUrl: "https://github.com/DiptiLecturer/AminulPortfolio"
+  }
 ];
 
 export const testimonial = {
@@ -103,6 +107,6 @@ export const testimonial = {
 };
 
 export const socialLinks = {
-  github: "https://github.com/DiptiLecurer",
+  github: "https://github.com/DiptiLecturer",
   whatsapp: "https://wa.me/01628458285",
 };
