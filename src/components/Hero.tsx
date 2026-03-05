@@ -51,7 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-base font-medium text-muted-foreground"
           >
-            Hi, I'm <span className="text-foreground font-semibold">Aminul Islam</span>
+            Hi, I'm <span className="text-foreground font-semibold">Aminul Islam Munna</span>
           </motion.p>
 
           {/* Headline */}
@@ -61,13 +61,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-[3.5rem]"
           >
-            I build{" "}
-            <span className="gradient-text">production-grade</span>
+            <span className="gradient-text">NSDA Level-4</span> Certified
             <br />
-            systems, then{" "}
-            <span className="gradient-text">teach</span>
-            <br />
-            you to master them.
+            Trainer & <span className="gradient-text">Assessor</span>
           </motion.h1>
 
           {/* Description */}
@@ -77,9 +73,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground"
           >
-            Android Developer & Technical Trainer bridging the gap between
-            academic learning and industry-ready skills — through real-world
-            projects that actually ship.
+            Specializing in Android development with Kotlin (Native & Multiplatform) and modern web technologies like Next.js. I'm very passionate about building scalable software solutions and mentoring the next generation of developers.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -100,7 +94,7 @@ const Hero = () => {
               Let's Talk
               <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            
+
             {/* FIXED: Added opening <a> tag */}
             <a
               href="#projects"
@@ -169,7 +163,7 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="absolute -left-6 top-8 rounded-2xl border border-border bg-card/90 px-4 py-2.5 shadow-xl backdrop-blur-md"
           >
-      
+
             <p className="mt-0.5 text-sm font-bold text-foreground">Android Dev</p>
           </motion.div>
 

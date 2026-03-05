@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description:
       "A modern note-taking application built with Room Database and Jetpack Compose. Features a clean MVVM architecture and local data persistence.",
     category: "Android Mobile",
-    image: "AminulPortfolio/public/notes.png",
+    image: "/notes.png",
     tags: ["Kotlin", "Jetpack Compose", "Room DB", "MVVM"],
     highlights: ["Local Persistence", "Modern UI", "AI Integration logic"],
     githubUrl: "https://github.com/AminulMunnaDev/NoteAppAIJpc"
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     description:
       "A professional business website for Osaka, featuring a robust backend inventory management system to track sales.",
     category: "Next.js Web",
-    image: "/images/projects/osaka-web.jpg",
+    image: "/placeholder.svg",
     tags: ["Next.js", "React", "Node.js", "Inventory System"],
     highlights: ["Backend Integration", "Inventory Tracking", "Business SEO"],
     githubUrl: "https://github.com/DiptiLecturer/osakaWebsite"
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     description:
       "An XML-based Android service for location management, developed as part of the NSDA job assessment. Handles coordinate tracking and UI mapping.",
     category: "Android Mobile",
-    image: "/images/projects/location-xml.jpg",
+    image: "/location.jpg",
     tags: ["Android XML", "Java/Kotlin", "Location Services", "NSDA"],
     highlights: ["GPS Integration", "Service Management", "Task-based UI"],
     githubUrl: "https://github.com/DiptiLecturer/NSDA_JOB_3_XML"
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     description:
       "A high-performance personal portfolio built with Next.js to showcase professional skills, projects, and educational background.",
     category: "Next.js Web",
-    image: "/images/projects/portfolio.jpg",
+    image: "/placeholder.svg",
     tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     highlights: ["Responsive Design", "Project Showcase", "Contact Form"],
     githubUrl: "https://github.com/DiptiLecturer/AminulPortfolio"
