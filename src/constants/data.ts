@@ -9,10 +9,10 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "86%", label: "Success Rate", icon: "BarChart3" },
-  { value: "100+", label: "Graduates", icon: "GraduationCap" },
-  { value: "3", label: "NSDA Batches", icon: "Users" },
-  { value: "2", label: "Industrial Attachments Batches", icon: "Users" },
+  { value: "87.9%", label: "Success Rate", icon: "BarChart3" },
+  { value: "140+", label: "Graduates", icon: "GraduationCap" },
+  { value: "7", label: "NHRDF/Asset Project Batch", icon: "Users" },
+  { value: "4", label: "Diploma Industrial Attachment Batch", icon: "Users" },
 ];
 
 export const courseStack = [
@@ -23,14 +23,13 @@ export const courseStack = [
   "Ktor",
   "Firebase",
   "Supabase",
-  "SQLite", // Note: This is duplicated in your original list
+  "SQLite", 
   "Kotlin Multiplatform",
 ];
 
 export const course = {
   title: "Zero to Hero: Android App Development",
-  description:
-    "A comprehensive, industry-ready training program that takes you from zero programming knowledge to building and deploying production-grade Android applications. Covers modern tools, architectures, and best practices used by top companies.",
+  description:"A comprehensive, industry-ready training program that takes you from zero programming knowledge to building and deploying production-grade Android applications. Covers modern tools, architectures, and best practices used by top companies.",
   duration: "12 Weeks(customizable)",
   level: "Beginner to Advanced",
   format: "Live + Hands-on Projects",
@@ -45,7 +44,7 @@ export type Project = {
   image: string;
   tags: string[];
   highlights: string[];
-  githubUrl?: string; // Added for better linking
+  githubUrl?: string; 
 };
 
 export const projects: Project[] = [
@@ -66,16 +65,16 @@ export const projects: Project[] = [
     description:
       "A professional business website for Osaka, featuring a robust backend inventory management system to track sales.",
     category: "Next.js Web",
-    image: "/placeholder.svg",
+    image: "/about-osaka.jpeg",
     tags: ["Next.js", "React", "Node.js", "Inventory System"],
     highlights: ["Backend Integration", "Inventory Tracking", "Business SEO"],
-    githubUrl: "https://github.com/DiptiLecturer/osakaWebsite"
+    githubUrl: "https://Osakagroupbd.com"
   },
   {
     id: 3,
-    title: "NSDA Location Management",
+    title: "Location Management System",
     description:
-      "An XML-based Android service for location management, developed as part of the NSDA job assessment. Handles coordinate tracking and UI mapping.",
+      "An XML-based Android service for location management. Handles coordinate tracking and UI mapping.",
     category: "Android Mobile",
     image: "/location.jpg",
     tags: ["Android XML", "Java/Kotlin", "Location Services", "NSDA"],
@@ -88,7 +87,7 @@ export const projects: Project[] = [
     description:
       "A high-performance personal portfolio built with Next.js to showcase professional skills, projects, and educational background.",
     category: "Next.js Web",
-    image: "/placeholder.svg",
+    image: "/5.jpegI",
     tags: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
     highlights: ["Responsive Design", "Project Showcase", "Contact Form"],
     githubUrl: "https://github.com/DiptiLecturer/AminulPortfolio"
